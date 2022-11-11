@@ -8,6 +8,6 @@
     "prettier": "^2.7.1"
   },
   "workspaces": [
-    "adventOfCode/*"
+    "adventOfCode"
   ]
 }
