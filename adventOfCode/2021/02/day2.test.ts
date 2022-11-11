@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { part1, part2 } from "./day2";
+import { part1, part2 } from "./index";
 
 describe("Day 02", function () {
   const input = readFileSync(join(__dirname, "input.txt"), "utf-8");
