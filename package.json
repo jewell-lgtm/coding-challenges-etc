@@ -1,0 +1,13 @@
+{
+  "name": "typescript-code-katas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "workspaces": [
+    "adventOfCode/*"
+  ]
+}

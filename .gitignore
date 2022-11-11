@@ -1,0 +1,75 @@
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+
+# node.js
+#
+node_modules
+npm-debug.log
+yarn-error.log
+
+# BUCK
+buck-out/
+\.buckd/
+
+# Android/IntelliJ
+#
+build/
+cache/
+builds
+.idea
+.gradle
+local.properties
+*.iml
+android/.project
+# Bundle artifact
+*.jsbundle
+
+# CocoaPods
+Pods
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.gitsecret/keys/random_seed
+!*.secret
+**/firestore-debug.log
+**/firebase-debug.log
+**/ui-debug.log
+.firebase
+
+#env
+.env
+.parcel-cache/
+tsconfig.tsbuildinfo
+lerna-debug.log
+/packages/database/tsconfig.build.tsbuildinfo
+.VERSION
+dist/
+**/emulators.log
+**/.eslintrc.flat.json
+
+# Local Netlify folder
+.netlify
