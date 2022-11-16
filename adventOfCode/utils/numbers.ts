@@ -1,5 +1,8 @@
-export const sum = (window: number[]): number =>
-  window.reduce((acc, curr) => acc + curr, 0);
+export const sum = (numbers: number[]): number =>
+  numbers.reduce((acc, curr) => acc + curr, 0);
+
+export const product = (numbers: number[]): number =>
+  numbers.reduce((acc, curr) => acc * curr, 1);
 
 export const hexToBinary = (hex: string): string =>
   hex
@@ -8,3 +11,6 @@ export const hexToBinary = (hex: string): string =>
     .join("");
 
 export const binaryToDecimal = (binary: string): number => parseInt(binary, 2);
+
+export const binaryToHex = (binary: string): string =>
+  parseInt(binary, 2).toString(16);
