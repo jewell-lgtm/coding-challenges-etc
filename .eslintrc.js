@@ -14,5 +14,6 @@ module.exports = {
   rules: {
     "prefer-arrow-callback": "error",
     "prefer-const": "warn",
+    "@typescript-eslint/no-non-null-assertion": "off",
   },
-};
+}
