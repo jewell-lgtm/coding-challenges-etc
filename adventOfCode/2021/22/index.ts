@@ -1,3 +1,5 @@
+import { range } from "../../utils/iter"
+
 export function part1(input: string) {
   const reactor = new Reactor()
   const lines = input
@@ -22,10 +24,10 @@ export function part2(input: string) {
 }
 
 export function parseLine(line: string) {
-  const [, command] = /^(\w+)/.exec(line)
-  const [xStart, xEnd, yStart, yEnd, zStart, zEnd] = line
-    .match(/(\d+)/g)!
-    .map(Number)
+  const [, command] = line.match(/^(\w+)/) ?? []
+  const [xStart, xEnd, yStart, yEnd, zStart, zEnd] = (
+    line.match(/(\d+)/g) ?? []
+  ).map(Number)
 
   return [command, new Cuboid(xStart, xEnd, yStart, yEnd, zStart, zEnd)] as [
     "off" | "on",
@@ -44,36 +46,43 @@ export class Cuboid {
   ) {}
 }
 
+type Point = [number, number, number]
+
 export class Reactor {
-  cubes = new Set<string>()
+  cubes = new Set<Point>()
 
   on(cube: Cuboid) {
-    for (let x = cube.xStart; x <= cube.xEnd; x++) {
-      if (!(x < -50 || x > 50)) {
-        for (let y = cube.yStart; y <= cube.yEnd; y++) {
-          if (!(y < -50 || y > 50)) {
-            for (let z = cube.zStart; z <= cube.zEnd; z++) {
-              if (!(z < -50 || z > 50)) {
-                this.cubes.add([x, y, z].join(","))
-              }
-            }
-          }
+    for (const x of range(
+      Math.max(-50, cube.xStart),
+      Math.min(cube.xEnd, 50) + 1
+    )) {
+      for (const y of range(
+        Math.max(-50, cube.yStart),
+        Math.min(cube.yEnd, 50) + 1
+      )) {
+        for (const z of range(
+          Math.max(-50, cube.zStart),
+          Math.min(cube.zEnd, 50) + 1
+        )) {
+          this.cubes.add([x, y, z])
         }
       }
     }
   }
-
   off(cube: Cuboid) {
-    for (let x = cube.xStart; x <= cube.xEnd; x++) {
-      if (!(x < -50 || x > 50)) {
-        for (let y = cube.yStart; y <= cube.yEnd; y++) {
-          if (!(y < -50 || y > 50)) {
-            for (let z = cube.zStart; z <= cube.zEnd; z++) {
-              if (!(z < -50 || z > 50)) {
-                this.cubes.delete([x, y, z].join(","))
-              }
-            }
-          }
+    for (const x of range(
+      Math.max(-50, cube.xStart),
+      Math.min(cube.xEnd, 50) + 1
+    )) {
+      for (const y of range(
+        Math.max(-50, cube.yStart),
+        Math.min(cube.yEnd, 50) + 1
+      )) {
+        for (const z of range(
+          Math.max(-50, cube.zStart),
+          Math.min(cube.zEnd, 50) + 1
+        )) {
+          this.cubes.delete([x, y, z])
         }
       }
     }
