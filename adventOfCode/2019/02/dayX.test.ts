@@ -4,8 +4,6 @@ import { part1, part2, runTape } from "./index"
 
 describe("Day 02", () => {
   const input = readFileSync(join(__dirname, "input.txt"), "utf-8")
-  const exampleInput1 = `1,1,1,4,99,5,6,0,99`
-  const exampleInput2 = exampleInput1
 
   it.each([
     [

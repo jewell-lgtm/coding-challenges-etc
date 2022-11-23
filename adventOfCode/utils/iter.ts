@@ -18,3 +18,18 @@ export const range = (start: number, end: number): Iterable<number> => {
     },
   }
 }
+
+export const first = <T>(things: Iterable<T>): T => [...things][0]!
+
+export function minimizeBy<T>(things: Iterable<T>, fn: (it: T) => number): T {
+  let best = first(things)
+  for (const thing of things) {
+    if (fn(thing) < fn(best)) {
+      best = thing
+    }
+  }
+  return best
+}
+
+export const minimize = (things: Iterable<number>): number =>
+  minimizeBy(things, (it) => it)
