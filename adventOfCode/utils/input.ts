@@ -1,2 +1,3 @@
-export const numbers = (input: string) => input.trim().split("\n").map(Number);
-export const lines = (input: string) => input.trim().split("\n");
+export const numbers = (input: string, separator = "\n") =>
+  input.trim().split(separator).map(Number)
+export const lines = (input: string) => input.trim().split("\n")
