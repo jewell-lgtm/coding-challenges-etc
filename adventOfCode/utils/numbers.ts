@@ -15,12 +15,6 @@ export const binaryToDecimal = (binary: string): number => parseInt(binary, 2)
 export const binaryToHex = (binary: string): string =>
   parseInt(binary, 2).toString(16)
 
-export const max = (numbers: number[]): number => {
-  let max = -Infinity
-  for (const number of numbers) {
-    if (number > max) {
-      max = number
-    }
-  }
-  return max
-}
+export const max = (numbers: number[]): number => Math.max(...numbers)
+
+export const min = (numbers: number[]): number => Math.min(...numbers)
